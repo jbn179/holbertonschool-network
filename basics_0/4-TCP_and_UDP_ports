@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # Script that displays listengning ports with PID and program name
-sudo netstat -lp
+netstat -lp
