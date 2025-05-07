@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
+# Script that pings an IP address passed as an argument
 
-# Vérifier si un argument est fourni
-if [ "$#" -ne 1 ]; then
+# Check if an argunemt is provided
+if [ -z "$1" ]; then
     echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
     exit 1
 fi
 
-# Effectuer 5 pings vers l'adresse IP spécifiée
+# Ping the IP address 5 times
 ping -c 5 "$1"
