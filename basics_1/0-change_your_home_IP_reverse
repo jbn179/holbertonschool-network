@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Script that reverts the modifications made by 0-change_your_home_IP
+# Restores localhost to 127.0.0.1
+# Removes custom entry for facebook.com
+
+cp /etc/hosts ~/hosts.new
+sed -i 's/127.0.0.2[[:space:]]localhost/127.0.0.1 localhost/g' ~/hosts.new
+sed -i '/8.8.8.8[[:space:]]facebook.com/d' ~/hosts.new
+cp -f ~/hosts.new /etc/hosts
